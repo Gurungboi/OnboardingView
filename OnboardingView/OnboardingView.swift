@@ -8,15 +8,10 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    // Note: With Tabview
-    @State private var currentTab = 1
-
-    // Note: Without Tabview
     @State private var currentStep: OnboardingStep = .stepOne
 
     var body: some View {
         // Note: Without Tabview
-
         //        switch currentStep {
         //        case .onboarding1:
         //            PageOne(currentStep: $currentStep)
@@ -28,14 +23,14 @@ struct OnboardingView: View {
 
         // Note: With Tabview
 
-        TabView(selection: $currentTab,
+        TabView(selection: $currentStep,
                 content: {
-            StepOne(currentStep: $currentStep, currentTab: $currentTab)
-                .tag(1)
-            StepTwo(currentStep: $currentStep, currentTab: $currentTab)
-                .tag(2)
-            StepThree(currentStep: $currentStep, currentTab: $currentTab)
-                .tag(3)
+            StepOne(currentStep: self.$currentStep)
+                .tag(OnboardingStep.stepOne)
+            StepTwo(currentStep: self.$currentStep)
+                .tag(OnboardingStep.stepTwo)
+            StepThree(currentStep: self.$currentStep)
+                .tag(OnboardingStep.stepThree)
         })
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .interactive))

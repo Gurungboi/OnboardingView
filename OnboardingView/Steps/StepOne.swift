@@ -10,10 +10,9 @@ import SwiftUI
 struct StepOne: View {
     @State private var isAnimating: Bool = false
     @Binding var currentStep: OnboardingStep
-    @Binding var currentTab: Int
 
     var body: some View {
-        VStack(spacing: 20.0) {
+        VStack(spacing: 16.0) {
             ZStack {
                 GeometryReader { geo in
                     Image("onboarding-1")
@@ -29,14 +28,13 @@ struct StepOne: View {
             Text("Increases productivity")
                 .font(.title2)
                 .bold()
-                .foregroundColor(Color(red: 41 / 255, green: 52 / 255, blue: 73 / 255))
+                .foregroundColor(.black)
                 .scaleEffect(isAnimating ? 1 : 0.4)
 
             Text("Stay on track and achieve your goals with ease - Let your ToDo list be your guide.")
                 .font(.headline)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 237 / 255, green: 203 / 255, blue: 150 / 255))
-                .shadow(color: Color.black.opacity(0.1), radius: 1, x: 2, y: 2)
+                .foregroundColor(Color(.sRGB, red: 0.2, green: 0.2, blue: 0.2, opacity: 1.0))
                 .scaleEffect(isAnimating ? 1 : 0.4)
 
             Spacer()
@@ -44,8 +42,7 @@ struct StepOne: View {
             HStack {
                 Button {
                     withAnimation {
-                        currentStep = .stepThree
-                        currentTab = 3
+                        self.currentStep = .stepThree
                     }
                 } label: {
                     Text("Skip")
@@ -55,8 +52,7 @@ struct StepOne: View {
                 Spacer()
                 Button {
                     withAnimation {
-                        currentStep = .stepTwo
-                        currentTab = 2
+                        self.currentStep = .stepTwo
                     }
                 } label: {
                     Image(systemName: "chevron.right")
@@ -83,6 +79,6 @@ struct StepOne: View {
 
 struct StepOne_Previews: PreviewProvider {
     static var previews: some View {
-        StepOne(currentStep: .constant(.stepTwo), currentTab: .constant(2))
+        StepOne(currentStep: .constant(.stepTwo))
     }
 }
