@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct StepThree: View {
-    
+
     @State private var isAnimating: Bool = false
     @Binding var currentStep: OnboardingStep
     @Binding var currentTab: Int
 
-    
     var body: some View {
         VStack(spacing: 20.0) {
             ZStack {
@@ -23,12 +22,11 @@ struct StepThree: View {
                         .aspectRatio(contentMode: .fit)
                         .offset(x: 0, y: 50)
                         .scaleEffect(isAnimating ? 1 : 0.8)
-                        .frame(width: geo.size.width ,
+                        .frame(width: geo.size.width,
                                height: geo.size.height * 0.8)
                 }
             }
 
-            
             Text("Increases accountability")
                 .font(.title2)
                 .bold()
@@ -78,4 +76,3 @@ struct PageThree_Previews: PreviewProvider {
         StepThree(currentStep: .constant(.stepOne), currentTab: .constant(1))
     }
 }
-

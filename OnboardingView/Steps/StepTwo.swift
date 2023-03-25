@@ -21,7 +21,7 @@ struct StepTwo: View {
                         .aspectRatio(contentMode: .fit)
                         .offset(x: 0, y: 50)
                         .scaleEffect(isAnimating ? 1 : 0.8)
-                        .frame(width: geo.size.width ,
+                        .frame(width: geo.size.width,
                                height: geo.size.height * 0.8)
                 }
             }
@@ -59,7 +59,6 @@ struct StepTwo: View {
 
             Spacer()
 
-
         }
         .padding(.horizontal, 16)
         .onAppear(perform: {
@@ -69,7 +68,7 @@ struct StepTwo: View {
             }
         })
     }
-    
+
 }
 
 struct StepTwo_Previews: PreviewProvider {

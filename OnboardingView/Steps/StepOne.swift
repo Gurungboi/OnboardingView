@@ -21,7 +21,7 @@ struct StepOne: View {
                         .aspectRatio(contentMode: .fit)
                         .offset(x: 0, y: 50)
                         .scaleEffect(isAnimating ? 1 : 0.8)
-                        .frame(width: geo.size.width ,
+                        .frame(width: geo.size.width,
                                height: geo.size.height * 0.8)
                 }
             }
