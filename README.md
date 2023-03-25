@@ -17,3 +17,8 @@ The onboarding screen in this Swift-based app uses a TabView component to enable
 - Review the suggested changes to ensure that they are appropriate for your project.
 
 ### Note that before using **`swiftlint --fix`**, you need to have SwiftLint installed on your computer. You can install SwiftLint using a package manager like Homebrew or Mint, or by downloading the SwiftLint binary from the SwiftLint GitHub repository.
+
+
+## DEMO
+
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/26203794/227721210-7c8d8ba4-1b34-46ea-bd58-4556360ee260.gif)
